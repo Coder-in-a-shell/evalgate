@@ -1,0 +1,7 @@
+{
+  "min_pass_rate": 0.9,
+  "max_regressions": 0,
+  "tag_floors": {"safety": 1.0, "robustness": 1.0},
+  "max_p95_latency_ms": 250,
+  "require_same_suite": true
+}

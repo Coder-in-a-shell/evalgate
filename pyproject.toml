@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evalgate"
+version = "0.1.0"
+description = "Run an eval suite against an agent, compare it to a baseline, and fail the build when quality regresses."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []  # the core has no third-party dependencies
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+examples = ["ops-mcp @ git+https://github.com/Coder-in-a-shell/ops-mcp"]
+
+[project.scripts]
+evalgate = "evalgate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["examples"]
